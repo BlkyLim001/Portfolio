@@ -1,26 +1,112 @@
-/* Hero background */
-.hero-section {
-  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
-              url('blkylimm.jpg');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=DM+Serif+Display&display=swap');
+
+:root {
+  --bg: #ffffff;
+  --fg: #000000;
+  --border: 2px solid var(--fg);
+  --max: 960px;
 }
 
-/* Fade-in animation on load */
-@keyframes fadeIn {
-  0% {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: var(--bg);
+  color: var(--fg);
+  display: flex;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.wrapper {
+  max-width: var(--max);
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.box {
+  border: var(--border);
+  padding: 2rem;
+}
+
+.intro h1 {
+  font-family: 'DM Serif Display', serif;
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.intro p {
+  font-size: 1.1rem;
+}
+
+.links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.links a {
+  text-decoration: none;
+  color: var(--fg);
+  border-bottom: 2px solid transparent;
+}
+
+.links a:hover {
+  border-color: var(--fg);
+}
+
+.projects h2,
+.blog h2 {
+  font-family: 'DM Serif Display', serif;
+  font-size: 1.75rem;
+  margin-bottom: 1rem;
+}
+
+.grid {
+  display: grid;
+  gap: 2rem;
+}
+
+.grid article img {
+  width: 100%;
+  border: var(--border);
+}
+
+.grid article h3 {
+  margin-top: 1rem;
+  font-size: 1.2rem;
+}
+
+.grid article p {
+  font-size: 0.95rem;
+  margin-top: 0.5rem;
+  line-height: 1.5;
+}
+
+/* Footer */
+.footer {
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+/* Responsive */
+@media (min-width: 700px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
-.animate-fade-in {
-  opacity: 0;
-  animation: fadeIn 1s ease-out forwards;
+@media (max-width: 699px) {
+  .links {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
 }
