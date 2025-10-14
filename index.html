@@ -3,95 +3,58 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="icon" type="image/jpeg" href="blkylimm.jpg">
-  <title>Blkylimm | Web3 Proof of Work</title>
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-  <link rel="stylesheet" href="style.css" />
+  <title>Hello. I'm Mac.</title>
+  <link rel="stylesheet" href="css/style.css" />
 </head>
-<body class="bg-gray-900 text-white font-sans">
+<body>
+  <div class="wrapper">
+    <header class="box intro">
+      <h1>Hello. I’m Mac.</h1>
+      <p>I design & build delightful digital experiences.</p>
+    </header>
 
-  <!-- Hero Section -->
-  <section class="hero-section min-h-screen flex items-center justify-center flex-col text-center px-4">
-    <h1 class="text-4xl md:text-6xl font-bold mb-4 animate-fade-in">
-      I'm <span class="text-purple-500">Arvid Blkylimm</span>
-    </h1>
-    <p class="text-lg md:text-xl max-w-xl animate-fade-in" style="animation-delay: 0.3s;">Front end dev | DeFi explorer | Solana degen | Content creator</p>
-    <a href="#projects" class="mt-6 inline-block px-6 py-3 bg-purple-600 text-white rounded-full hover:bg-purple-700 transition animate-fade-in" style="animation-delay: 0.6s;">View My Work</a>
-  </section>
+    <section class="box links">
+      <a href="#">About</a>
+      <a href="#">Projects</a>
+      <a href="#">Blog</a>
+      <a href="#">Contact</a>
+    </section>
 
-  <!-- Skills Section -->
-  <section class="py-20 bg-gray-800 px-4">
-    <h2 class="text-3xl font-semibold text-center mb-12" data-aos="fade-up">Skills</h2>
-    <div class="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
-      <div data-aos="fade-up">Front end dev</div>
-      <div data-aos="fade-up" data-aos-delay="100">Bot Dev (Telegram, Warpcast)</div>
-      <div data-aos="fade-up" data-aos-delay="200">UI/UX Basics</div>
-      <div data-aos="fade-up" data-aos-delay="300">Good writer</div>
-      <div data-aos="fade-up" data-aos-delay="400">On-chain Research</div>
-      <div data-aos="fade-up" data-aos-delay="500">Degen Trader</div>
-    </div>
-  </section>
+    <section class="box projects">
+      <h2>Projects</h2>
+      <div class="grid">
+        <article>
+          <img src="https://placehold.co/600x400/ffffff/000000?text=Project+1" alt="Project 1">
+          <h3>Project One</h3>
+          <p>A short description about the project goes here.</p>
+        </article>
+        <article>
+          <img src="https://placehold.co/600x400/ffffff/000000?text=Project+2" alt="Project 2">
+          <h3>Project Two</h3>
+          <p>Another description about a different project.</p>
+        </article>
+      </div>
+    </section>
 
-  <!-- Projects Section -->
-  <section id="projects" class="py-20 px-4">
-    <h2 class="text-3xl font-semibold text-center mb-12" data-aos="fade-up">Projects</h2>
-    <div class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
-      <div class="bg-gray-800 p-6 rounded-lg shadow" data-aos="fade-up">
-        <h3 class="text-xl font-bold mb-2">BLERP NFT Collection</h3>
-        <p class="text-sm mb-2">Created this site for this 50 NFTs on Solana WL checker</p>
-        <a href="https://www.blerp.site/" target="_blank" class="text-purple-400">View Project</a>
+    <section class="box blog">
+      <h2>From the Blog</h2>
+      <div class="grid">
+        <article>
+          <img src="https://placehold.co/600x400/ffffff/000000?text=Blog+1" alt="Blog 1">
+          <h3>The First Step into Stillness</h3>
+          <p>Learning to slow down and observe the world, not just react to it...</p>
+        </article>
+        <article>
+          <img src="https://placehold.co/600x400/ffffff/000000?text=Blog+2" alt="Blog 2">
+          <h3>Why Creativity Needs Silence</h3>
+          <p>In a world full of noise, the rarest skill is focused stillness...</p>
+        </article>
       </div>
-      <div class="bg-gray-800 p-6 rounded-lg shadow" data-aos="fade-up" data-aos-delay="100">
-        <h3 class="text-xl font-bold mb-2">Created my own Portfolio site</h3>
-        <p class="text-sm mb-2">Shows all my works</p>
-      </div>
-      <div class="bg-gray-800 p-6 rounded-lg shadow" data-aos="fade-up" data-aos-delay="200">
-        <h3 class="text-xl font-bold mb-2">Wrote this thread for a Sui Project</h3>
-        <p class="text-sm mb-2">The number one dApp on Sui at the moment</p>
-        <a href="https://x.com/blkylimm/status/1919406086177648897?s=46" target="_blank" class="text-purple-400">View Thread</a>
-      </div>
-      <div class="bg-gray-800 p-6 rounded-lg shadow" data-aos="fade-up" data-aos-delay="300">
-        <h3 class="text-xl font-bold mb-2">Wrote this thread for some dApps on MegaETH</h3>
-        <p class="text-sm mb-2">The first real time blockchain looking to eliminate gas limits</p>
-        <a href="https://x.com/blkylimm/status/1905116150599458886?s=46" target="_blank" class="text-purple-400">View Thread</a>
-      </div>
-      <div class="bg-gray-800 p-6 rounded-lg shadow" data-aos="fade-up" data-aos-delay="400">
-        <h3 class="text-xl font-bold mb-2">Wrote this thread for ODX labs V2 airdrop</h3>
-        <p class="text-sm mb-2">Wrapped assets protocol on Sonic</p>
-        <a href="https://x.com/blkylimm/status/1905669911214518734?s=46" target="_blank" class="text-purple-400">View Thread</a>
-      </div>
-      <div class="bg-gray-800 p-6 rounded-lg shadow" data-aos="fade-up" data-aos-delay="500">
-        <h3 class="text-xl font-bold mb-2">Wrote this thread for Truth Finance airdrop</h3>
-        <p class="text-sm mb-2">Redefining the future of decentralization</p>
-        <a href="https://x.com/blkylimm/status/1911135623827820751?s=46" target="_blank" class="text-purple-400">View Thread</a>
-      </div>
-      <div class="bg-gray-800 p-6 rounded-lg shadow" data-aos="fade-up" data-aos-delay="500">
-        <h3 class="text-xl font-bold mb-2">This is a weekly review thread for pawtato finance</h3>
-        <p class="text-sm mb-2">This is the number DEX on the sui chain</p>
-        <a href="https://x.com/blkylimm/status/1929021907610796286?s=46" target="_blank" class="text-purple-400">View Thread</a>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Contact Section -->
-  <section class="py-20 bg-gray-800 px-4">
-    <h2 class="text-3xl font-semibold text-center mb-12" data-aos="fade-up">Contact Info</h2>
-    <div class="max-w-4xl mx-auto text-center space-y-4" data-aos="fade-up">
-      <p>X handle: <a href="https://x.com/blkylimm" target="_blank" class="text-purple-400">blkylimm</a></p>
-      <p>Telegram: <a href="https://t.me/blkylimm" target="_blank" class="text-purple-400">blkylimm</a></p>
-      <p>Email: <a href="mailto:blkylimm@gmail.com" class="text-purple-400">blkylimm@gmail.com</a></p>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer class="py-10 bg-gray-900 text-center text-sm">
-    <p>Built with love.</p>
-  </footer>
-
-  <!-- Scripts -->
-  <script src="scripts/main.js"></script>
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script>AOS.init();</script>
+    <footer class="box footer">
+      <p>© 2025 Mac — All rights reserved.</p>
+    </footer>
+  </div>
 </body>
 </html>
