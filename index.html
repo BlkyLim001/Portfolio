@@ -1,172 +1,375 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Hello. I'm Mac.</title>
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=DM+Serif+Display&display=swap');
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hillary Bale - JavaScript Trainer</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
 
-    :root {
-      --bg: #ffffff;
-      --fg: #000000;
-      --border: 2px solid var(--fg);
-      --max: 960px;
-    }
+        body {
+            background-color: #f5f7fa;
+            color: #333;
+            line-height: 1.6;
+        }
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
 
-    body {
-      font-family: 'Inter', sans-serif;
-      background: var(--bg);
-      color: var(--fg);
-      display: flex;
-      justify-content: center;
-      padding: 2rem;
-    }
+        .profile-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
 
-    .wrapper {
-      max-width: var(--max);
-      width: 100%;
-      display: flex;
-      flex-direction: column;
-      gap: 2rem;
-    }
+        /* Trainer Info Section */
+        .trainer-info {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+        }
 
-    .box {
-      border: var(--border);
-      padding: 2rem;
-    }
+        .trainer-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
 
-    .intro h1 {
-      font-family: 'DM Serif Display', serif;
-      font-size: 2.5rem;
-      margin-bottom: 0.5rem;
-    }
+        .avatar {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background-color: #e0e0e0;
+            margin-right: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            color: #777;
+        }
 
-    .intro p {
-      font-size: 1.1rem;
-    }
+        .trainer-details h1 {
+            font-size: 24px;
+            margin-bottom: 5px;
+        }
 
-    .links {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      text-transform: uppercase;
-      font-weight: 600;
-    }
+        .trainer-details p {
+            color: #666;
+        }
 
-    .links a {
-      text-decoration: none;
-      color: var(--fg);
-      border-bottom: 2px solid transparent;
-    }
+        .stats-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin: 20px 0;
+        }
 
-    .links a:hover {
-      border-color: var(--fg);
-    }
+        .stat-item {
+            background-color: #f0f4f8;
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+        }
 
-    .projects h2,
-    .blog h2 {
-      font-family: 'DM Serif Display', serif;
-      font-size: 1.75rem;
-      margin-bottom: 1rem;
-    }
+        .stat-value {
+            font-size: 24px;
+            font-weight: bold;
+            color: #2c5aa0;
+        }
 
-    .grid {
-      display: grid;
-      gap: 2rem;
-    }
+        .stat-label {
+            font-size: 14px;
+            color: #666;
+        }
 
-    .grid article img {
-      width: 100%;
-      border: var(--border);
-    }
+        .divider {
+            height: 1px;
+            background-color: #e0e0e0;
+            margin: 25px 0;
+        }
 
-    .grid article h3 {
-      margin-top: 1rem;
-      font-size: 1.2rem;
-    }
+        .bio {
+            margin-bottom: 25px;
+            color: #555;
+        }
 
-    .grid article p {
-      font-size: 0.95rem;
-      margin-top: 0.5rem;
-      line-height: 1.5;
-    }
+        .action-buttons {
+            display: flex;
+            gap: 15px;
+        }
 
-    .footer {
-      text-align: center;
-      font-size: 0.9rem;
-    }
+        .btn {
+            padding: 12px 20px;
+            border-radius: 5px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
 
-    @media (min-width: 700px) {
-      .grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-    }
+        .btn-primary {
+            background-color: #2c5aa0;
+            color: white;
+            border: none;
+        }
 
-    @media (max-width: 699px) {
-      .links {
-        flex-direction: column;
-        gap: 0.75rem;
-      }
-    }
-  </style>
+        .btn-secondary {
+            background-color: transparent;
+            color: #2c5aa0;
+            border: 1px solid #2c5aa0;
+        }
+
+        /* Work Experience Section */
+        .work-experience {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            margin-top: 30px;
+        }
+
+        .section-title {
+            font-size: 20px;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .job {
+            margin-bottom: 25px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .job:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .job-title {
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        .company {
+            color: #2c5aa0;
+            margin-bottom: 5px;
+        }
+
+        .duration {
+            color: #666;
+            font-size: 14px;
+        }
+
+        /* Reviews Section */
+        .reviews {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+        }
+
+        .rating-summary {
+            display: flex;
+            align-items: center;
+            margin-bottom: 25px;
+        }
+
+        .rating-value {
+            font-size: 28px;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+
+        .rating-stars {
+            color: #ffc107;
+            margin-right: 10px;
+        }
+
+        .rating-count {
+            color: #666;
+            font-size: 14px;
+            text-decoration: underline;
+            cursor: pointer;
+        }
+
+        .review {
+            margin-bottom: 25px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .review:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .review-text {
+            margin-bottom: 15px;
+            color: #555;
+        }
+
+        .reviewer {
+            display: flex;
+            align-items: center;
+        }
+
+        .reviewer-avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: #e0e0e0;
+            margin-right: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            color: #777;
+        }
+
+        .reviewer-info h4 {
+            font-size: 16px;
+            margin-bottom: 2px;
+        }
+
+        .reviewer-info p {
+            font-size: 14px;
+            color: #666;
+        }
+
+        @media (max-width: 768px) {
+            .profile-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
 <body>
-  <div class="wrapper">
-    <header class="box intro">
-      <h1>Hello. I’m Mac.</h1>
-      <p>I design & build delightful digital experiences.</p>
-    </header>
-
-    <section class="box links">
-      <a href="#">About</a>
-      <a href="#">Projects</a>
-      <a href="#">Blog</a>
-      <a href="#">Contact</a>
-    </section>
-
-    <section class="box projects">
-      <h2>Projects</h2>
-      <div class="grid">
-        <article>
-          <img src="https://placehold.co/600x400/ffffff/000000?text=Project+1" alt="Project 1">
-          <h3>Project One</h3>
-          <p>A short description about the project goes here.</p>
-        </article>
-        <article>
-          <img src="https://placehold.co/600x400/ffffff/000000?text=Project+2" alt="Project 2">
-          <h3>Project Two</h3>
-          <p>Another description about a different project.</p>
-        </article>
-      </div>
-    </section>
-
-    <section class="box blog">
-      <h2>From the Blog</h2>
-      <div class="grid">
-        <article>
-          <img src="https://placehold.co/600x400/ffffff/000000?text=Blog+1" alt="Blog 1">
-          <h3>The First Step into Stillness</h3>
-          <p>Learning to slow down and observe the world, not just react to it...</p>
-        </article>
-        <article>
-          <img src="https://placehold.co/600x400/ffffff/000000?text=Blog+2" alt="Blog 2">
-          <h3>Why Creativity Needs Silence</h3>
-          <p>In a world full of noise, the rarest skill is focused stillness...</p>
-        </article>
-      </div>
-    </section>
-
-    <footer class="box footer">
-      <p>© 2025 Mac — All rights reserved.</p>
-    </footer>
-  </div>
+    <div class="container">
+        <div class="profile-grid">
+            <!-- Left Column -->
+            <div class="left-column">
+                <!-- Trainer Info Section -->
+                <section class="trainer-info">
+                    <div class="trainer-header">
+                        <div class="avatar">HB</div>
+                        <div class="trainer-details">
+                            <h1>Hillary Bale</h1>
+                            <p>hill.bale@gmail.com</p>
+                        </div>
+                    </div>
+                    
+                    <div class="stats-grid">
+                        <div class="stat-item">
+                            <div class="stat-value">10+</div>
+                            <div class="stat-label">experience</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-value">#1</div>
+                            <div class="stat-label">en platinum</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-value">5 ya</div>
+                            <div class="stat-label">of teaching</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-value">12</div>
+                            <div class="stat-label">concess</div>
+                        </div>
+                    </div>
+                    
+                    <div class="divider"></div>
+                    
+                    <p class="bio">
+                        I'm JavaScript trainer with over 10 years of experience in the service or development industry. Passion and about teaching how to code and helping them develop their skills.
+                    </p>
+                    
+                    <div class="action-buttons">
+                        <button class="btn btn-primary">Request session</button>
+                        <button class="btn btn-secondary">Portfolio</button>
+                    </div>
+                </section>
+                
+                <!-- Work Experience Section -->
+                <section class="work-experience">
+                    <h2 class="section-title">Work experience</h2>
+                    
+                    <div class="job">
+                        <div class="job-title">Senior JavaScript Developer</div>
+                        <div class="company">Friecracker Inc.</div>
+                        <div class="duration">May 2022 – present</div>
+                    </div>
+                    
+                    <div class="job">
+                        <div class="job-title">Senior JavaScript Developer</div>
+                        <div class="company">Pro Property Maintenance</div>
+                        <div class="duration">May 2013 – Nov 2022</div>
+                    </div>
+                    
+                    <div class="job">
+                        <div class="job-title">Middle JavaScript Developer</div>
+                        <div class="company">Cut Blue Launch Case</div>
+                        <div class="duration">May 2012 – Nov 2013</div>
+                    </div>
+                </section>
+            </div>
+            
+            <!-- Right Column -->
+            <div class="right-column">
+                <!-- Reviews Section -->
+                <section class="reviews">
+                    <h2 class="section-title">Students reviews</h2>
+                    
+                    <div class="rating-summary">
+                        <div class="rating-value">4.4</div>
+                        <div class="rating-stars">★★★★★</div>
+                        <div class="rating-count">See stats</div>
+                        <div style="margin-left: auto;">127</div>
+                    </div>
+                    
+                    <div class="review">
+                        <p class="review-text">
+                            The progress I have made since starting in an interview! I can only for short period go long periods and continue to display lists in the evening.
+                        </p>
+                        <div class="reviewer">
+                            <div class="reviewer-avatar">SN</div>
+                            <div class="reviewer-info">
+                                <h4>Stephanie N.</h4>
+                                <p>Middle JavaScript Dev.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="review">
+                        <p class="review-text">
+                            I felt like I learned months in a week. Love how we understand my practice and gives great challenges to help the learner to understand new concepts and subject.
+                        </p>
+                        <div class="reviewer">
+                            <div class="reviewer-avatar">VF</div>
+                            <div class="reviewer-info">
+                                <h4>Vane F.</h4>
+                                <p>Junior JavaScript Dev.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="review">
+                        <p class="review-text">
+                            Bullfast learning experiences. Very informative. Listening a game-changing theme. Running online into the evening. I have written, shared, learning by practice.
+                        </p>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
-
