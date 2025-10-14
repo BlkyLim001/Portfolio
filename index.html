@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>blkylimm portfolio</title>
+    <title>blkylimm - Community Manager</title>
     <style>
         * {
             margin: 0;
@@ -57,6 +57,13 @@
             font-size: 24px;
             color: white;
             font-weight: bold;
+            overflow: hidden;
+        }
+
+        .avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
 
         .trainer-details h1 {
@@ -65,9 +72,16 @@
             color: #2d3748;
         }
 
-        .trainer-details p {
-            color: #718096;
+        .trainer-details .email {
+            color: #4a69bd;
             font-size: 14px;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .trainer-details .email:hover {
+            color: #1e3799;
+            text-decoration: underline;
         }
 
         .stats-grid {
@@ -119,6 +133,9 @@
             cursor: pointer;
             transition: all 0.3s ease;
             font-size: 14px;
+            text-decoration: none;
+            display: inline-block;
+            text-align: center;
         }
 
         .btn-primary {
@@ -127,10 +144,18 @@
             border: none;
         }
 
+        .btn-primary:hover {
+            background-color: #1e3799;
+        }
+
         .btn-secondary {
             background-color: transparent;
             color: #4a69bd;
             border: 1px solid #4a69bd;
+        }
+
+        .btn-secondary:hover {
+            background-color: #edf2f7;
         }
 
         /* Work Experience Section */
@@ -171,13 +196,24 @@
 
         .company {
             color: #4a69bd;
-            margin-bottom: 4px;
+            margin-bottom: 8px;
+            font-size: 14px;
+        }
+
+        .job-details {
+            margin-left: 15px;
+        }
+
+        .job-details li {
+            margin-bottom: 5px;
+            color: #4a5568;
             font-size: 14px;
         }
 
         .duration {
             color: #718096;
             font-size: 13px;
+            margin-top: 5px;
         }
 
         /* Reviews Section */
@@ -284,19 +320,21 @@
         <div class="profile-grid">
             <!-- Left Column -->
             <div class="left-column">
-                <!-- Trainer Info Section -->
+                <!-- Profile Info Section -->
                 <section class="trainer-info">
                     <div class="trainer-header">
-                        <div class="avatar">HB</div>
+                        <div class="avatar">
+                            <img src="blkylimm.jpg" alt="blkylimm">
+                        </div>
                         <div class="trainer-details">
                             <h1>blkylimm</h1>
-                            <p><a href="mailto:blkylimm@gmail.com" class="email">blkylimm@gmail.com</p>
+                            <a href="mailto:blkylimm@gmail.com" class="email">blkylimm@gmail.com</a>
                         </div>
                     </div>
                     
                     <div class="stats-grid">
                         <div class="stat-item">
-                            <div class="stat-value">10+</div>
+                            <div class="stat-value">2+</div>
                             <div class="stat-label">experience</div>
                         </div>
                         <div class="stat-item">
@@ -316,12 +354,12 @@
                     <div class="divider"></div>
                     
                     <p class="bio">
-                        I'm JavaScript trainer with over 10 years of experience in the service or development industry. Passion and about teaching how to code and helping them develop their skills.
+                        Experienced community manager with over 2 years in the Web3 and tech industry. Passionate about building and engaging communities, driving growth, and creating meaningful connections.
                     </p>
                     
                     <div class="action-buttons">
-                        <button class="btn btn-primary">Request session</button>
-                        <button class="btn btn-secondary">Portfolio</button>
+                        <a href="https://x.com/blkylimm?s=21" target="_blank" class="btn btn-primary">x-profile</a>
+                        <a href="https://t.me/blkylimm" target="_blank" class="btn btn-secondary">telegram</a>
                     </div>
                 </section>
                 
@@ -330,21 +368,40 @@
                     <h2 class="section-title">Work experience</h2>
                     
                     <div class="job">
-                        <div class="job-title">Senior JavaScript Developer</div>
-                        <div class="company">Friecracker Inc.</div>
-                        <div class="duration">May 2022 – present</div>
+                        <div class="job-title">Community Moderator → Head Community Manager</div>
+                        <div class="company">Umoja Protocol</div>
+                        <ul class="job-details">
+                            <li>Started as Community Moderator, then moved to Head Community Manager</li>
+                            <li>Voted as the best community Moderator by 85% of the members</li>
+                        </ul>
                     </div>
                     
                     <div class="job">
-                        <div class="job-title">Senior JavaScript Developer</div>
-                        <div class="company">Pro Property Maintenance</div>
-                        <div class="duration">May 2013 – Nov 2022</div>
+                        <div class="job-title">Community Moderator → Head Community Moderator</div>
+                        <div class="company">HYPER BLAST</div>
+                        <ul class="job-details">
+                            <li>Community Moderator for 2 weeks and then assigned head community Moderator role</li>
+                            <li>Made the server lively, which yielded more engagement and members trooping in</li>
+                        </ul>
                     </div>
                     
                     <div class="job">
-                        <div class="job-title">Middle JavaScript Developer</div>
-                        <div class="company">Cut Blue Launch Case</div>
-                        <div class="duration">May 2012 – Nov 2013</div>
+                        <div class="job-title">Head Community Manager & Marketing Lead</div>
+                        <div class="company">Zeebit</div>
+                        <ul class="job-details">
+                            <li>Head community manager</li>
+                            <li>Lead marketing manager</li>
+                            <li>Official Brand Ambassador</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="job">
+                        <div class="job-title">Community & Marketing Manager</div>
+                        <div class="company">UpTo3.xyz</div>
+                        <ul class="job-details">
+                            <li>Community manager</li>
+                            <li>Marketing manager</li>
+                        </ul>
                     </div>
                 </section>
             </div>
@@ -353,45 +410,52 @@
             <div class="right-column">
                 <!-- Reviews Section -->
                 <section class="reviews">
-                    <h2 class="section-title">Students reviews</h2>
+                    <h2 class="section-title">Community reviews</h2>
                     
                     <div class="rating-summary">
-                        <div class="rating-value">4.4</div>
+                        <div class="rating-value">4.8</div>
                         <div class="rating-stars">★★★★★</div>
                         <div class="rating-count">See stats</div>
-                        <div class="review-count">127</div>
+                        <div class="review-count">94</div>
                     </div>
                     
                     <div class="review">
                         <p class="review-text">
-                            The progress I have made since starting in an interview! I can only for short period go long periods and continue to display lists in the evening.
+                            blkylimm transformed our community engagement completely. Their strategies increased our member participation by over 200% in just two months. Truly exceptional community management skills.
                         </p>
                         <div class="reviewer">
-                            <div class="reviewer-avatar">SN</div>
+                            <div class="reviewer-avatar">UM</div>
                             <div class="reviewer-info">
-                                <h4>Stephanie N.</h4>
-                                <p>Middle JavaScript Dev.</p>
+                                <h4>Umoja Team</h4>
+                                <p>Protocol Foundation</p>
                             </div>
                         </div>
                     </div>
                     
                     <div class="review">
                         <p class="review-text">
-                            I felt like I learned months in a week. Love how we understand my practice and gives great challenges to help the learner to understand new concepts and subject.
+                            Working with blkylimm was a game-changer for our project. They not only managed our community effectively but also contributed significantly to our marketing strategy and brand development.
                         </p>
                         <div class="reviewer">
-                            <div class="reviewer-avatar">VF</div>
+                            <div class="reviewer-avatar">ZB</div>
                             <div class="reviewer-info">
-                                <h4>Vane F.</h4>
-                                <p>Junior JavaScript Dev.</p>
+                                <h4>Zeebit Core Team</h4>
+                                <p>Blockchain Project</p>
                             </div>
                         </div>
                     </div>
                     
                     <div class="review">
                         <p class="review-text">
-                            Bullfast learning experiences. Very informative. Listening a game-changing theme. Running online into the evening. I have written, shared, learning by practice.
+                            The energy and dedication blkylimm brought to our community was incredible. In just weeks, our engagement metrics skyrocketed and we saw a significant increase in active members.
                         </p>
+                        <div class="reviewer">
+                            <div class="reviewer-avatar">HB</div>
+                            <div class="reviewer-info">
+                                <h4>Hyper Blast Team</h4>
+                                <p>Gaming Platform</p>
+                            </div>
+                        </div>
                     </div>
                 </section>
             </div>
@@ -399,4 +463,3 @@
     </div>
 </body>
 </html>
-
