@@ -1,475 +1,304 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>blkylimm - Community Manager</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
+    <title>Web3 Community Manager Portfolio</title>
+    <meta name="description" content="Portfolio of a Web3 Community Manager and Writer.">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&family=Merriweather:ital,wght@0,300;0,400;0,700;1,300&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-        body {
-            background-color: #f8f9fa;
-            color: #333;
-            line-height: 1.6;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-
-        .profile-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 30px;
-        }
-
-        /* Trainer Info Section */
-        .trainer-info {
-            background-color: #fff;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-            padding: 25px;
-            border: 1px solid #eaeaea;
-        }
-
-        .trainer-header {
-            display: flex;
-            align-items: center;
-            margin-bottom: 20px;
-        }
-
-        .avatar {
-            width: 70px;
-            height: 70px;
-            border-radius: 50%;
-            background: linear-gradient(135deg, #6a89cc, #4a69bd);
-            margin-right: 15px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 24px;
-            color: white;
-            font-weight: bold;
-            overflow: hidden;
-        }
-
-        .avatar img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .trainer-details h1 {
-            font-size: 22px;
-            margin-bottom: 5px;
-            color: #2d3748;
-        }
-
-        .trainer-details .email {
-            color: #4a69bd;
-            font-size: 14px;
-            text-decoration: none;
-            transition: color 0.2s;
-        }
-
-        .trainer-details .email:hover {
-            color: #1e3799;
-            text-decoration: underline;
-        }
-
-        .stats-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 12px;
-            margin: 20px 0;
-        }
-
-        .stat-item {
-            background-color: #edf2f7;
-            padding: 12px;
-            border-radius: 6px;
-            text-align: center;
-        }
-
-        .stat-value {
-            font-size: 20px;
-            font-weight: bold;
-            color: #2d3748;
-        }
-
-        .stat-label {
-            font-size: 13px;
-            color: #718096;
-        }
-
-        .divider {
-            height: 1px;
-            background-color: #e2e8f0;
-            margin: 20px 0;
-        }
-
-        .bio {
-            margin-bottom: 20px;
-            color: #4a5568;
-            font-size: 14px;
-        }
-
-        .action-buttons {
-            display: flex;
-            gap: 12px;
-        }
-
-        .btn {
-            padding: 10px 18px;
-            border-radius: 6px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            font-size: 14px;
-            text-decoration: none;
-            display: inline-block;
-            text-align: center;
-        }
-
-        .btn-primary {
-            background-color: #4a69bd;
-            color: white;
-            border: none;
-        }
-
-        .btn-primary:hover {
-            background-color: #1e3799;
-        }
-
-        .btn-secondary {
-            background-color: transparent;
-            color: #4a69bd;
-            border: 1px solid #4a69bd;
-        }
-
-        .btn-secondary:hover {
-            background-color: #edf2f7;
-        }
-
-        /* Work Experience Section */
-        .work-experience {
-            background-color: #fff;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-            padding: 25px;
-            margin-top: 25px;
-            border: 1px solid #eaeaea;
-        }
-
-        .section-title {
-            font-size: 18px;
-            margin-bottom: 18px;
-            color: #2d3748;
-            font-weight: 600;
-        }
-
-        .job {
-            margin-bottom: 20px;
-            padding-bottom: 18px;
-            border-bottom: 1px solid #f1f1f1;
-        }
-
-        .job:last-child {
-            border-bottom: none;
-            margin-bottom: 0;
-            padding-bottom: 0;
-        }
-
-        .job-title {
-            font-weight: 600;
-            margin-bottom: 4px;
-            color: #2d3748;
-            font-size: 15px;
-        }
-
-        .company {
-            color: #4a69bd;
-            margin-bottom: 8px;
-            font-size: 14px;
-        }
-
-        .job-details {
-            margin-left: 15px;
-        }
-
-        .job-details li {
-            margin-bottom: 5px;
-            color: #4a5568;
-            font-size: 14px;
-        }
-
-        .duration {
-            color: #718096;
-            font-size: 13px;
-            margin-top: 5px;
-        }
-
-        /* Reviews Section */
-        .reviews {
-            background-color: #fff;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-            padding: 25px;
-            border: 1px solid #eaeaea;
-        }
-
-        .rating-summary {
-            display: flex;
-            align-items: center;
-            margin-bottom: 20px;
-            padding-bottom: 15px;
-            border-bottom: 1px solid #f1f1f1;
-        }
-
-        .rating-value {
-            font-size: 24px;
-            font-weight: bold;
-            margin-right: 8px;
-            color: #2d3748;
-        }
-
-        .rating-stars {
-            color: #f6b93b;
-            margin-right: 8px;
-            font-size: 16px;
-        }
-
-        .rating-count {
-            color: #4a69bd;
-            font-size: 13px;
-            text-decoration: underline;
-            cursor: pointer;
-        }
-
-        .review-count {
-            margin-left: auto;
-            color: #718096;
-            font-size: 14px;
-        }
-
-        .review {
-            margin-bottom: 20px;
-            padding-bottom: 18px;
-            border-bottom: 1px solid #f1f1f1;
-        }
-
-        .review:last-child {
-            border-bottom: none;
-            margin-bottom: 0;
-            padding-bottom: 0;
-        }
-
-        .review-text {
-            margin-bottom: 15px;
-            color: #4a5568;
-            font-size: 14px;
-            line-height: 1.5;
-        }
-
-        .reviewer {
-            display: flex;
-            align-items: center;
-        }
-
-        .reviewer-avatar {
-            width: 36px;
-            height: 36px;
-            border-radius: 50%;
-            background: linear-gradient(135deg, #e55039, #eb2f06);
-            margin-right: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 13px;
-            color: white;
-            font-weight: bold;
-        }
-
-        .reviewer-info h4 {
-            font-size: 14px;
-            margin-bottom: 2px;
-            color: #2d3748;
-        }
-
-        .reviewer-info p {
-            font-size: 13px;
-            color: #718096;
-        }
-
-        @media (max-width: 768px) {
-            .profile-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
-<body>
-    <div class="container">
-        <div class="profile-grid">
-            <!-- Left Column -->
-            <div class="left-column">
-                <!-- Profile Info Section -->
-                <section class="trainer-info">
-                    <div class="trainer-header">
-                        <div class="avatar">
-                            <img src="blkylimm.jpg" alt="blkylimm">
-                        </div>
-                        <div class="trainer-details">
-                            <h1>blkylimm</h1>
-                            <a href="mailto:blkylimm@gmail.com" class="email">blkylimm@gmail.com</a>
-                        </div>
-                    </div>
-                    
-                    <div class="stats-grid">
-                        <div class="stat-item">
-                            <div class="stat-value">3+</div>
-                            <div class="stat-label">years experience</div>
-                        </div>
-                        <div class="stat-item">
-                            <div class="stat-value">95%</div>
-                            <div class="stat-label">community satisfaction</div>
-                        </div>
-                        <div class="stat-item">
-                            <div class="stat-value">10+</div>
-                            <div class="stat-label">projects managed</div>
-                        </div>
-                        <div class="stat-item">
-                            <div class="stat-value">50K+</div>
-                            <div class="stat-label">members reached</div>
-                        </div>
-                    </div>
-                    
-                    <div class="divider"></div>
-                    
-                    <p class="bio">
-                        Experienced community manager, plus additional front end dev skills and an onchain wiz. 
-                    </p>
-                    
-                    <div class="action-buttons">
-                        <a href="https://x.com/blkylimm?s=21" target="_blank" class="btn btn-primary">x-profile</a>
-                        <a href="https://t.me/blkylimm" target="_blank" class="btn btn-secondary">telegram</a>
-                        <a href="https://discord.com/users/blkylimm" target="_blank" class="btn btn-primary">discord</a>
-                    </div>
-                </section>
-                
-                <!-- Work Experience Section -->
-                <section class="work-experience">
-                    <h2 class="section-title">Work experience</h2>
-                    
-                    <div class="job">
-                        <div class="job-title">Head Community Manager</div>
-                        <div class="company">Umoja Protocol</div>
-                        <ul class="job-details">
-                            <li>Started as Community Moderator, then moved to Head Community Manager</li>
-                            <li>Voted as the best community Moderator by 85% of the members</li>
-                        </ul>
-                    </div>
-                    
-                    <div class="job">
-                        <div class="job-title">Head Community Moderator</div>
-                        <div class="company">HYPER BLAST</div>
-                        <ul class="job-details">
-                            <li>Community Moderator for 2 weeks and then assigned head community Moderator role</li>
-                            <li>Made the server one of the most active web3 community then, which yielded more engagement and over 17k new members on one viral post idea/li>
-                        </ul>
-                    </div>
-                    
-                    <div class="job">
-                        <div class="job-title">Head Community Manager & Marketing Lead</div>
-                        <div class="company">Zeebit</div>
-                        <ul class="job-details">
-                            <li>Head community manager</li>
-                            <li>Lead marketing manager</li>
-                            <li>Official Brand Ambassador</li>
-                        </ul>
-                    </div>
-                    
-                    <div class="job">
-                        <div class="job-title">Community & Marketing Manager</div>
-                        <div class="company">UpTo3.xyz</div>
-                        <ul class="job-details">
-                            <li>Community manager</li>
-                            <li>Marketing manager</li>
-                        </ul>
-                    </div>
-                    <div class="job">
-                        <div class="job-title">Ambasadorship</div>
-                        <div class="company">bitdcaofficial</div>
-                          <div class="company">olive finance</div>
-                          <div class="company">atom_stake</div>
-                          <div class="company">kana finance</div>
-                    </div>
-                </section>
+<body class="bg-papaya text-textMain font-sans antialiased overflow-x-hidden selection:bg-primary selection:text-white">
+
+    <canvas id="network-canvas"></canvas>
+
+    <nav id="navbar" class="fixed w-full z-50 transition-all duration-300 py-4">
+        <div class="container mx-auto px-6 flex justify-between items-center">
+            <a href="#" class="text-2xl font-display font-bold text-textMain tracking-tighter">
+                blkylimm<span class="text-primary"></span>
+            </a>
+            
+            <div class="hidden md:flex space-x-8 items-center">
+                <a href="#about" class="text-sm font-medium text-textMuted hover:text-primary transition-colors">About</a>
+                <a href="#pulse" class="text-sm font-medium text-textMuted hover:text-primary transition-colors">Tweets</a>
+                <a href="#journal" class="text-sm font-medium text-textMuted hover:text-primary transition-colors">Journal</a>
+                <a href="https://t.me/blkylimm" target="_blank" class="px-5 py-2 rounded-full bg-gradient-to-r from-primary to-secondary text-white text-sm font-bold hover:opacity-90 transition-opacity shadow-lg shadow-orange-500/25">
+                    Let's Chat
+                </a>
+            </div>
+
+            <button id="mobile-menu-btn" class="md:hidden text-textMain focus:outline-none">
+                <i class="fas fa-bars text-2xl"></i>
+            </button>
+        </div>
+
+        <div id="mobile-menu" class="fixed inset-0 bg-white/95 backdrop-blur-xl z-40 transform translate-x-full transition-transform duration-300 flex flex-col justify-center items-center space-y-8 md:hidden">
+            <button id="close-menu-btn" class="absolute top-6 right-6 text-textMain text-2xl">
+                <i class="fas fa-times"></i>
+            </button>
+            <a href="#about" class="text-2xl font-display font-bold text-textMain mobile-link">About</a>
+            <a href="#pulse" class="text-2xl font-display font-bold text-textMain mobile-link">Tweets</a>
+            <a href="#journal" class="text-2xl font-display font-bold text-textMain mobile-link">Journal</a>
+            <a href="https://t.me/blkylimm" target="_blank" class="text-2xl font-display font-bold text-primary mobile-link">Contact</a>
+        </div>
+    </nav>
+
+    <section class="min-h-screen flex items-center justify-center relative overflow-hidden pt-20">
+        <div class="absolute top-0 -left-4 w-72 h-72 bg-orange-300 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob"></div>
+        <div class="absolute top-0 -right-4 w-72 h-72 bg-pink-300 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob animation-delay-2000"></div>
+        <div class="absolute -bottom-8 left-20 w-72 h-72 bg-yellow-200 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob animation-delay-4000"></div>
+
+        <div class="container mx-auto px-6 relative z-10 text-center">
+            <div class="inline-block mb-8 px-4 py-1 rounded-full border border-orange-200 bg-white/40 backdrop-blur-sm">
+                <span class="text-primary text-xs font-bold tracking-widest uppercase">crypto enjoyoor | community believoor</span>
             </div>
             
-            <!-- Right Column -->
-            <div class="right-column">
-                <!-- Reviews Section -->
-                <section class="reviews">
-                    <h2 class="section-title">Community reviews</h2>
+            <div class="flex justify-center mb-10 relative">
+                <div class="w-48 h-48 md:w-64 md:h-64 rounded-full p-1 bg-gradient-to-r from-primary to-secondary shadow-2xl relative z-10 hover:scale-105 transition-transform duration-300">
                     
-                    <div class="rating-summary">
-                        <div class="rating-value">4.8</div>
-                        <div class="rating-stars">★★★★★</div>
-                        <div class="rating-count">See stats</div>
-                        <div class="review-count">94</div>
-                    </div>
-                    
-                    <div class="review">
-                        <p class="review-text">
-                            blkylimm transformed our community engagement completely. Their strategies increased our member participation by over 200% in just two months. Truly exceptional community management skills.
-                        </p>
-                        <div class="reviewer">
-                            <div class="reviewer-avatar">UM</div>
-                            <div class="reviewer-info">
-                                <h4>Umoja Team</h4>
-                                <p>Protocol Foundation</p>
+                    <img 
+                        src="pfp.jpg" 
+                        alt="profile picture" 
+                        loading="lazy"
+                        class="w-full h-full rounded-full object-cover border-4 border-white/50 bg-white"
+                    >
+                
+                </div>
+                <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-48 h-48 bg-primary/40 blur-3xl rounded-full -z-10"></div>
+            </div>
+            
+            <p class="text-lg md:text-xl text-textMuted max-w-2xl mx-auto mb-10 leading-relaxed font-serif italic">
+                "you dont need to chase everything, pick what vibes with you and go all in."
+            </p>
+            
+            <div class="flex flex-col md:flex-row gap-4 justify-center items-center">
+                <a href="#journal" class="px-8 py-3 rounded-full bg-textMain text-white font-bold hover:bg-gray-800 transition-colors shadow-lg">
+                    Read Journal
+                </a>
+                <a href="#pulse" class="px-8 py-3 rounded-full border border-gray-400 text-textMain font-medium hover:border-primary hover:text-primary hover:bg-white/50 transition-all flex items-center gap-2">
+                    <i class="fab fa-twitter"></i> Recent Activity
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section id="pulse" class="py-24 relative">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16 reveal">
+                <h2 class="text-3xl md:text-4xl font-display font-bold text-textMain mb-4">Tweets</h2>
+                <p class="text-textMuted max-w-xl mx-auto">latest threads and shitposts</p>
+                <div class="h-1 w-20 bg-gradient-to-r from-primary to-secondary mx-auto rounded-full mt-4"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                
+                <a href="https://x.com/blkylimm/status/1988879505969344951?s=20" target="_blank" class="glass-card p-6 rounded-2xl reveal group block relative">
+                    <div class="flex justify-between items-start mb-4">
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center text-blue-400">
+                                <i class="fab fa-twitter text-lg"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-sm text-textMain group-hover:text-blue-500 transition-colors">Everything on Miden</h4>
+                                <p class="text-xs text-textMuted">Twitter • 1 month ago</p>
                             </div>
                         </div>
+                        <i class="fas fa-external-link-alt text-gray-400 group-hover:text-primary transition-colors"></i>
                     </div>
-                    
-                    <div class="review">
-                        <p class="review-text">
-                            Working with blkylimm was a game-changer for our project. They not only managed our community effectively but also contributed significantly to our marketing strategy and brand development.
-                        </p>
-                        <div class="reviewer">
-                            <div class="reviewer-avatar">ZB</div>
-                            <div class="reviewer-info">
-                                <h4>Zeebit Core Team</h4>
-                                <p>Blockchain Project</p>
+                    <p class="text-textMain text-sm leading-relaxed mb-2">
+                       All my posts on miden from the past month compiled into one thread for easy reading. Deep dives into its architecture and potential.
+                    </p>
+                    <span class="text-xs font-bold text-blue-500 hover:underline">View Tweet &rarr;</span>
+                </a>
+
+                <a href="https://x.com/blkylimm/status/1979612067452875240?s=20" target="_blank" class="glass-card p-6 rounded-2xl reveal group block relative" style="transition-delay: 100ms;">
+                    <div class="flex justify-between items-start mb-4">
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-full bg-indigo-100 flex items-center justify-center text-indigo-400">
+                                <i class="fab fa-twitter text-lg"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-sm text-textMain group-hover:text-indigo-500 transition-colors">How buying and selling of options work</h4>
+                                <p class="text-xs text-textMuted">Twitter • 1 month ago</p>
                             </div>
                         </div>
+                        <i class="fas fa-external-link-alt text-gray-400 group-hover:text-primary transition-colors"></i>
                     </div>
-                    
-                    <div class="review">
-                        <p class="review-text">
-                            The energy and dedication blkylimm brought to our community was incredible. In just weeks, our engagement metrics skyrocketed and we saw a significant increase in active members.
-                        </p>
-                        <div class="reviewer">
-                            <div class="reviewer-avatar">HB</div>
-                            <div class="reviewer-info">
-                                <h4>Hyper Blast Team</h4>
-                                <p>Gaming Platform</p>
+                    <p class="text-textMain text-sm leading-relaxed mb-2">
+                        A detailed explanation of how buying and selling options work in the crypto space, breaking down complex concepts into digestible insights.
+                    </p>
+                    <span class="text-xs font-bold text-indigo-500 hover:underline">View Tweet &rarr;</span>
+                </a>
+                <a href="https://x.com/blkylimm/status/1970998183586124278?s=20" target="_blank" class="glass-card p-6 rounded-2xl reveal group block relative" style="transition-delay: 100ms;">
+                    <div class="flex justify-between items-start mb-4">
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-full bg-indigo-100 flex items-center justify-center text-indigo-400">
+                                <i class="fab fa-twitter text-lg"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-sm text-textMain group-hover:text-indigo-500 transition-colors">Five privacy survey answers</h4>
+                                <p class="text-xs text-textMuted">Twitter • 1 month ago</p>
                             </div>
                         </div>
+                        <i class="fas fa-external-link-alt text-gray-400 group-hover:text-primary transition-colors"></i>
                     </div>
-                </section>
+                    <p class="text-textMain text-sm leading-relaxed mb-2">
+                        Sharing my thoughts on five key questions about privacy in the digital age, exploring its implications for individuals and communities.
+                    </p>
+                    <span class="text-xs font-bold text-indigo-500 hover:underline">View Tweet &rarr;</span>
+                </a>
+
+                 
+            </div>
+        </div>
+    </section>
+
+    <section id="journal" class="py-24 bg-white/40 relative backdrop-blur-sm border-y border-white/50">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-12 reveal">
+                <div>
+                    <h2 class="text-3xl md:text-4xl font-display font-bold text-textMain mb-2">Personal Journal</h2>
+                    <p class="text-textMuted">a little touch of my thoughts, both crypto and non crypto</p>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="glass-card rounded-2xl overflow-hidden group reveal cursor-pointer journal-entry" onclick="openArticle('article1')">
+                    <div class="h-48 bg-orange-100 relative overflow-hidden">
+                        <div class="absolute inset-0 bg-gradient-to-t from-orange-200/50 to-transparent"></div>
+                         <div class="absolute bottom-4 left-6">
+                            <span class="text-xs font-bold text-orange-600 uppercase tracking-wider bg-white/80 px-2 py-1 rounded">Personal</span>
+                         </div>
+                    </div>
+                    <div class="p-8">
+                        <div class="flex items-center gap-2 text-xs text-textMuted mb-3">
+                            <i class="far fa-calendar"></i> April 4th, 2025
+                        </div>
+                        <h3 class="text-2xl font-serif font-bold text-textMain mb-3 group-hover:text-primary transition-colors">
+                            My Web3 journey
+                        </h3>
+                        <p class="text-textMuted line-clamp-3 leading-relaxed">
+                            this is a reminder to anyone that feels like they are puting in the work and not seeing results yet. keep going, your time is coming.
+                        </p>
+
+                        <div class="mt-6 flex items-center text-primary font-bold text-sm">
+                            Read Entry <i class="fas fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="glass-card rounded-2xl overflow-hidden group reveal cursor-pointer journal-entry" style="transition-delay: 100ms;" onclick="openArticle('article2')">
+                     <div class="h-48 bg-pink-100 relative overflow-hidden">
+                        <div class="absolute inset-0 bg-gradient-to-t from-pink-200/50 to-transparent"></div>
+                         <div class="absolute bottom-4 left-6">
+                            <span class="text-xs font-bold text-pink-600 uppercase tracking-wider bg-white/80 px-2 py-1 rounded">Personal</span>
+                         </div>
+                    </div>
+                    <div class="p-8">
+                        <div class="flex items-center gap-2 text-xs text-textMuted mb-3">
+                            <i class="far fa-calendar"></i> Nov 05, 2025
+                        </div>
+                        <h3 class="text-2xl font-serif font-bold text-textMain mb-3 group-hover:text-secondary transition-colors">
+                            The idea of privacy
+                        </h3>
+                        <p class="text-textMuted line-clamp-3 leading-relaxed">
+                            privacy is a fundamental human right that is essential for the exercise of freedom and dignity. in the digital age, privacy has become increasingly important as more and more of our personal information is being collected, stored, and shared online.
+                        </p>
+
+                        <div class="mt-6 flex items-center text-secondary font-bold text-sm">
+                            Read Entry <i class="fas fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="py-24 relative overflow-hidden">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-2 gap-16 items-center">
+                <div class="reveal">
+                    <h2 class="text-3xl md:text-4xl font-display font-bold text-textMain mb-6">About Me</h2>
+                    <p class="text-textMuted mb-6 leading-relaxed text-lg">
+                       honestly i would just say i am more of a vibes person. i love to be happy always, i crave peace all the time, so i just tend to use that to impact any body or any community that i am part of.
+                    </p>
+                    <p class="text-textMuted mb-8 leading-relaxed">
+                        my journey into web3 community management started when i realized the power of collective action in decentralized spaces. since then, I've been passionate about fostering inclusive and engaging communities that thrive on collaboration and shared values.
+                    </p>
+                    
+                </div>
+                <div class="relative reveal">
+                    <div class="relative z-10 glass p-8 rounded-2xl border border-white/40 shadow-xl bg-white/30">
+                        <div class="flex items-center gap-4 mb-6">
+                             <div class="w-20 h-20 rounded-full bg-gradient-to-r from-primary to-secondary flex items-center justify-center text-white font-bold text-3xl shadow-lg border-4 border-white/50">
+                                CM
+                            </div>
+                            <div>
+                                <h3 class="text-textMain font-bold text-xl">blkylimm</h3>
+                                <div class="flex items-center gap-2">
+                                    <span class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
+                                    <span class="text-textMuted text-sm">open for roles</span>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="text-textMuted italic border-l-4 border-primary pl-4 py-2 bg-orange-50/50 rounded-r-lg">
+                            building community is like gardening. you can't force the flower to bloom, but you can water the soil.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-12 border-t border-gray-200/50 bg-white/30 backdrop-blur-sm mt-12">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-2xl font-display font-bold text-textMain mb-6">Let's Connect</h2>
+            <div class="flex justify-center space-x-8 mb-8">
+                <a href="https://x.com/blkylimm?s=21" target="_blank" class="w-12 h-12 rounded-full bg-white flex items-center justify-center text-textMuted hover:text-blue-400 hover:shadow-lg transition-all"><i class="fab fa-twitter text-xl"></i></a>
+                <a href="https://t.me/blkylimm" target="_blank" class="w-12 h-12 rounded-full bg-white flex items-center justify-center text-textMuted hover:text-blue-700 hover:shadow-lg transition-all"><i class="fab fa-telegram text-xl"></i></a>
+                <a href="https://discord.com/users/blkylimm" target="_blank" class="w-12 h-12 rounded-full bg-white flex items-center justify-center text-textMuted hover:text-indigo-500 hover:shadow-lg transition-all"><i class="fab fa-discord text-xl"></i></a>
+                <a href="mailto:blkylimm@gmail.com" class="w-12 h-12 rounded-full bg-white flex items-center justify-center text-textMuted hover:text-red-500 hover:shadow-lg transition-all"><i class="fas fa-envelope text-xl"></i></a>
+            </div>
+            <div class="text-textMuted text-sm font-medium">
+                &copy; blkylimm
+            </div>
+        </div>
+    </footer>
+
+    <div id="article-modal" class="fixed inset-0 z-[100] hidden-modal flex justify-center items-center">
+        <div class="absolute inset-0 bg-gray-900/40 backdrop-blur-md" onclick="closeArticle()"></div>
+        
+        <div class="bg-papaya w-full h-full md:h-[90vh] md:w-[800px] md:rounded-2xl shadow-2xl relative z-10 flex flex-col overflow-hidden border border-white/50">
+            <div class="p-4 md:p-6 border-b border-orange-200 bg-white/50 flex justify-between items-center backdrop-blur-sm">
+                <span class="text-xs font-bold text-primary uppercase tracking-widest">Journal Reading Mode</span>
+                <button onclick="closeArticle()" class="w-8 h-8 rounded-full bg-gray-200 hover:bg-gray-300 flex items-center justify-center transition-colors">
+                    <i class="fas fa-times text-gray-600"></i>
+                </button>
+            </div>
+            
+            <div class="flex-1 overflow-y-auto p-6 md:p-12 custom-scrollbar">
+                <article class="prose prose-orange lg:prose-lg mx-auto font-serif text-textMain">
+                    <span id="modal-date" class="text-sm text-textMuted font-sans block mb-2"></span>
+                    <h1 id="modal-title" class="text-3xl md:text-4xl font-bold mb-8 leading-tight font-display text-gray-900"></h1>
+                    <div id="modal-body" class="space-y-6 text-lg leading-relaxed text-gray-700">
+                        </div>
+                    <div class="mt-12 pt-8 border-t border-orange-200/50 text-center">
+                        <p class="text-sm font-sans italic text-textMuted">Thanks for reading. want to discuss this?</p>
+                        <a href="https://x.com/blkylimm?s=21" onclick="closeArticle()" class="inline-block mt-2 text-primary font-bold hover:underline font-sans">reach out on twitter</a>
+                    </div>
+                </article>
             </div>
         </div>
     </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
-
-
